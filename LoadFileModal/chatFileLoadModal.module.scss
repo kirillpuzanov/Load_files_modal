@@ -1,0 +1,170 @@
+@import 'src/shared/styles/utils';
+
+.chatLoadFilesModal {
+  :global {
+    .ant-modal-content {
+      max-height: toRem(592);
+      border-radius: toRem(10) !important;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ant-modal-body {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+  }
+
+  &.tablet {
+    :global {
+      .ant-modal-content {
+        max-height: toRem(416);
+      }
+    }
+  }
+
+  .uploadArea {
+    @include flexCenter;
+    flex-direction: column;
+    width: 100%;
+    height: toRem(156);
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 1px dashed var(--borderPrimary);
+    border-radius: toRem(16);
+    margin-top: toRem(16);
+
+    color: var(--textSecondary);
+
+    .uploadTextWrapper {
+      margin-top: toRem(16);
+      margin-bottom: toRem(4);
+      font-size: toRem(14);
+
+      .uploadText {
+        color: var(--textAccent);
+      }
+    }
+
+    .description {
+      font-size: toRem(12);
+    }
+  }
+
+  .fileList {
+    overflow-y: auto;
+    flex: 1;
+    padding: toRem(16) 0 toRem(16);
+    @include hideScrollBar;
+
+    .fileItem {
+      @include flexRowSB;
+      padding: toRem(4) toRem(8);
+      border-radius: toRem(8);
+      margin-top: toRem(16);
+      border: 1px solid var(--borderPrimary);
+
+      &:first-child {
+        margin-top: toRem(0);
+      }
+
+      &.error {
+        border: 1px solid var(--borderWarning);
+      }
+
+      .rowInner {
+        display: flex;
+        align-items: center;
+
+        .preview {
+          width: toRem(36);
+          height: toRem(36);
+          border-radius: toRem(6);
+          margin-right: toRem(8);
+        }
+
+        .videoThumb {
+          @include flexCenter;
+          background: url('../../../../../shared/assets/icons/chats/videoThumb.jpg');
+          color: var(--white);
+
+          svg {
+            width: toRem(16);
+            height: toRem(16);
+          }
+        }
+
+        .docWrapper {
+          @include flexCenter;
+          background-color: var(--graphicAccent);
+          color: var(--white);
+        }
+
+        .fileName {
+          line-height: toRem(18);
+          font-size: toRem(14);
+        }
+
+        .fileSize {
+          line-height: toRem(18);
+          font-size: toRem(12);
+          color: var(--textSecondary);
+        }
+      }
+
+      .actionBtnWrapper {
+        display: flex;
+        align-items: center;
+        font-size: toRem(14);
+
+        .actionBtn {
+          width: toRem(24);
+          height: toRem(24);
+          cursor: pointer;
+          margin-left: toRem(12);
+          @include flexCenter;
+        }
+
+        .errorText {
+          color: var(--textWarning);
+        }
+      }
+    }
+  }
+
+  .modalFooter {
+    display: flex;
+    align-items: center;
+    padding-top: toRem(18);
+    border-top: 1px solid var(--borderPrimary);
+
+    &.smart {
+      border-top: none;
+      padding-top: toRem(8);
+    }
+
+    .inputWrapper {
+      flex: 1;
+    }
+
+    .actionBtn {
+      @include flexCenter;
+      height: toRem(38);
+      cursor: pointer;
+
+      &.disable {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+
+      &.right {
+        margin-right: toRem(8);
+      }
+
+      &.left {
+        margin-left: toRem(8);
+      }
+    }
+  }
+}
