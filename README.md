@@ -1,3 +1,5 @@
+![галя_у_нас_отмена](https://github.com/kirillpuzanov/Load_files_modal/assets/61689573/8e78fb55-5ee5-4613-93f1-e0e1ffcfde8f)
+
 Примерное поведение для данного функционала:
 
 МОДАЛКА:
